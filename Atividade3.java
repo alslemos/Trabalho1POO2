@@ -189,12 +189,69 @@ public class gerenciador extends JFrame {
 		menuItem2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				// Parte 2 do código
 				
-				// codigo da opcao 2 vai aqui
-				JInternalFrame ju = new JInternalFrame("Janela Interna 2 ", true);
-				ju.setBounds(50, 50, 250, 200);
-				ju.setVisible(true);
-				
+                JInternalFrame ju = new JInternalFrame("Janela Interna 2: JSplitDemo ", true);
+                ju.setBounds(50, 50, 420, 318);
+                
+                JSplitPane splitPane = new JSplitPane();
+                splitPane.setOneTouchExpandable(true);
+                splitPane.setToolTipText("tool tip\n"); 
+                ju.add(splitPane, BorderLayout.CENTER);
+                
+                
+                JScrollPane scrollPane = new JScrollPane();
+                splitPane.setLeftComponent(scrollPane);
+                        
+                JPanel RighPanel = new JPanel();
+                RighPanel.setBackground(SystemColor.window);
+                scrollPane.setViewportView(RighPanel);
+                
+                
+                JLabel labelImagem = new JLabel("");
+                
+                try {
+                    labelImagem.setBounds(0, 0, 194, 241); // width, height
+                    labelImagem.setIcon(new ImageIcon(ImageIO.read(Imagem.class.getResource("/icons/homer2.jpg"))
+                            .getScaledInstance(labelImagem.getWidth(), labelImagem.getHeight(), BufferedImage.TYPE_INT_RGB)));
+                } catch (Exception f) {
+                    f.printStackTrace();
+                }
+                
+                RighPanel.add(labelImagem);
+                
+                
+                try {
+                } catch (Exception f) {
+                    // TODO: handle exception
+                    f.printStackTrace();
+                }
+                
+                JPanel LeftPanel = new JPanel();
+                splitPane.setRightComponent(LeftPanel);
+                
+                LeftPanel.setLayout(new MigLayout("", "[110px]", "[16px][][][][][][]"));
+                
+                File imageFile = new File("/icons/homer2.jpg");
+                String imageName = imageFile.getName();
+                
+                JLabel labelNome = new JLabel("Nome da Imagem: "+ imageName + " ");
+                LeftPanel.add(labelNome, "cell 0 0,alignx left,aligny top");
+                
+                
+                int wid = labelImagem.getWidth();
+                JLabel labelLargura = new JLabel("Largura da Imagem: " + wid + " ");
+                LeftPanel.add(labelLargura, "cell 0 3");
+            
+                
+                int hei = labelImagem.getHeight();
+                JLabel labelAltura = new JLabel("Altura da Imagem: "+ hei + " ");
+                LeftPanel.add(labelAltura, "cell 0 6,alignx left");
+
+
+            // aqui termina 
+                
+                ju.setVisible(true);
 				desktopPane.add(ju);
 				ju.setMaximizable(true); // pode ser maximizada
 				ju.setClosable(true); // pode ser fechada;
