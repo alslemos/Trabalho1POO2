@@ -98,6 +98,10 @@ public class gerenciador extends JFrame {
 					lblNewLabel_6.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
 					panel1.add(lblNewLabel_6, "cell 1 0");
 					
+					JLabel lblNewLabel_6 = new JLabel("Dados pessoais");
+					lblNewLabel_6.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
+					panel1.add(lblNewLabel_6, "cell 1 0");
+					
 					JLabel lblNewLabel = new JLabel("Nome");
 					panel1.add(lblNewLabel, "cell 0 1,alignx trailing");
 					
@@ -159,95 +163,95 @@ public class gerenciador extends JFrame {
 					JPanel panel2 = new JPanel();
 					panel2.setBackground(new Color(200, 200, 200));
 					tabbedPane.addTab("Anamnese", new ImageIcon(Prontuario.class.getResource("/icons/2.png")), panel2, null);
+					panel2.setLayout(new MigLayout("", "[grow]", "[][][][][][][][][][][][grow]"));
+					
+					JLabel lblNewLabel_7 = new JLabel("Anamnese");
+					lblNewLabel_7.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
+					panel2.add(lblNewLabel_7, "cell 0 0");
+					
+					JLabel lblNewLabel_8 = new JLabel("Anamnese inicial");
+					panel2.add(lblNewLabel_8, "cell 0 1");
+					
+					textField_4 = new JTextField();
+					panel2.add(textField_4, "cell 0 2 1 2,growx");
+					textField_4.setColumns(10);
+					
+					JCheckBox chckbxNewCheckBox = new JCheckBox("Auscuta realizada");
+					panel2.add(chckbxNewCheckBox, "cell 0 4");
+					
+					JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Aferição pressao sanguinea");
+					panel2.add(chckbxNewCheckBox_1, "cell 0 5");
+					
+					JCheckBox chckbxNewCheckBox_2 = new JCheckBox("Nível oxigenação");
+					panel2.add(chckbxNewCheckBox_2, "cell 0 6");
+					
+					JCheckBox chckbxNewCheckBox_3 = new JCheckBox("Temperatura corportal");
+					panel2.add(chckbxNewCheckBox_3, "cell 0 7");
+					
+					JCheckBox chckbxNewCheckBox_4 = new JCheckBox("Sintomas gripais");
+					panel2.add(chckbxNewCheckBox_4, "cell 0 8");
+					
+					JCheckBox chckbxNewCheckBox_5 = new JCheckBox("Sinais de fratura");
+					panel2.add(chckbxNewCheckBox_5, "cell 0 9");
+					
+					JLabel lblNewLabel_9 = new JLabel("Observações completas");
+					panel2.add(lblNewLabel_9, "cell 0 10");
+					
+					JEditorPane editorPane = new JEditorPane();
+					panel2.add(editorPane, "cell 0 11,grow");
 					
 					JPanel panel3 = new JPanel();
 					panel3.setBackground(new Color(100, 100, 100));
 					tabbedPane.addTab("Exames", new ImageIcon(Prontuario.class.getResource("/icons/3.png")), panel3, null);
+					panel3.setLayout(new MigLayout("", "[grow]", "[][][][][][][][][grow]"));
+					
+					JLabel lblNewLabel_10 = new JLabel("Exames solicitados");
+					lblNewLabel_10.setForeground(new Color(255, 255, 255));
+					lblNewLabel_10.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
+					panel3.add(lblNewLabel_10, "cell 0 0");
+					
+					JSeparator separator = new JSeparator();
+					panel3.add(separator, "cell 0 1");
+					
+					JCheckBox chckbxNewCheckBox_6 = new JCheckBox("Exame 1");
+					chckbxNewCheckBox_6.setForeground(new Color(255, 255, 255));
+					panel3.add(chckbxNewCheckBox_6, "cell 0 2");
+					
+					JCheckBox chckbxNewCheckBox_7 = new JCheckBox("Exame 2");
+					chckbxNewCheckBox_7.setForeground(new Color(255, 255, 255));
+					panel3.add(chckbxNewCheckBox_7, "cell 0 3");
+					
+					JCheckBox chckbxNewCheckBox_8 = new JCheckBox("Exame 3");
+					chckbxNewCheckBox_8.setForeground(new Color(255, 255, 255));
+					panel3.add(chckbxNewCheckBox_8, "cell 0 4");
+					
+					JCheckBox chckbxNewCheckBox_9 = new JCheckBox("Exame 4");
+					chckbxNewCheckBox_9.setForeground(new Color(255, 255, 255));
+					panel3.add(chckbxNewCheckBox_9, "cell 0 5");
+					
+					JLabel lblNewLabel_11 = new JLabel("Resultados significativos anteriores");
+					lblNewLabel_11.setForeground(new Color(255, 255, 255));
+					panel3.add(lblNewLabel_11, "cell 0 7");
+					
+					JEditorPane editorPane_1 = new JEditorPane();
+					panel3.add(editorPane_1, "cell 0 8,grow");
 					
 					JPanel panel4 = new JPanel();
 					panel4.setBackground(new Color(50, 50, 150));
 					tabbedPane.addTab("Tratamentos", new ImageIcon(Prontuario.class.getResource("/icons/4.png")), panel4, null);
-				// aqui termina 
+					panel4.setLayout(new MigLayout("", "[61px,grow]", "[16px][][grow][][][][][][][]"));
 					
-				// definindo como visivel	
-				ji.setVisible(true);
-				
-				// add ao painel
-				desktopPane.add(ji);
-				
-				// pode ser maximizada
-				ji.setMaximizable(true);
-				
-				// pode ser fechada;
-				ji.setClosable(true); 
-				
-			}
-		});
-		menu.add(menuItem);
-		
-		menuItem2 = new JMenuItem("JSplitDemo: atividade 2");
-		menuItem2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				// Parte 2 do código
-				
-                JInternalFrame ju = new JInternalFrame("Janela Interna 2: JSplitDemo ", true);
-                ju.setBounds(50, 50, 420, 318);
-                
-                JSplitPane splitPane = new JSplitPane();
-                splitPane.setOneTouchExpandable(true);
-                splitPane.setToolTipText("tool tip\n"); 
-                ju.add(splitPane, BorderLayout.CENTER);
-                
-                
-                JScrollPane scrollPane = new JScrollPane();
-                splitPane.setLeftComponent(scrollPane);
-                        
-                JPanel RighPanel = new JPanel();
-                RighPanel.setBackground(SystemColor.window);
-                scrollPane.setViewportView(RighPanel);
-                
-                
-                JLabel labelImagem = new JLabel("");
-                
-                try {
-                    labelImagem.setBounds(0, 0, 194, 241); // width, height
-                    labelImagem.setIcon(new ImageIcon(ImageIO.read(Imagem.class.getResource("/icons/homer2.jpg"))
-                            .getScaledInstance(labelImagem.getWidth(), labelImagem.getHeight(), BufferedImage.TYPE_INT_RGB)));
-                } catch (Exception f) {
-                    f.printStackTrace();
-                }
-                
-                RighPanel.add(labelImagem);
-                
-                
-                try {
-                } catch (Exception f) {
-                    // TODO: handle exception
-                    f.printStackTrace();
-                }
-                
-                JPanel LeftPanel = new JPanel();
-                splitPane.setRightComponent(LeftPanel);
-                
-                LeftPanel.setLayout(new MigLayout("", "[110px]", "[16px][][][][][][]"));
-                
-                File imageFile = new File("/icons/homer2.jpg");
-                String imageName = imageFile.getName();
-                
-                JLabel labelNome = new JLabel("Nome da Imagem: "+ imageName + " ");
-                LeftPanel.add(labelNome, "cell 0 0,alignx left,aligny top");
-                
-                
-                int wid = labelImagem.getWidth();
-                JLabel labelLargura = new JLabel("Largura da Imagem: " + wid + " ");
-                LeftPanel.add(labelLargura, "cell 0 3");
-            
-                
-                int hei = labelImagem.getHeight();
-                JLabel labelAltura = new JLabel("Altura da Imagem: "+ hei + " ");
-                LeftPanel.add(labelAltura, "cell 0 6,alignx left");
-
+					JLabel lblNewLabel_12 = new JLabel("Tratamentos indicados");
+					lblNewLabel_12.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
+					lblNewLabel_12.setForeground(new Color(255, 255, 255));
+					panel4.add(lblNewLabel_12, "cell 0 0");
+					
+					JLabel lblNewLabel_13 = new JLabel("Siga-os por gentileza");
+					lblNewLabel_13.setForeground(new Color(198, 198, 198));
+					panel4.add(lblNewLabel_13, "cell 0 1");
+					
+					JTextPane textPane_1 = new JTextPane();
+					panel4.add(textPane_1, "cell 0 2 1 8,grow");
 
             // aqui termina 
                 
